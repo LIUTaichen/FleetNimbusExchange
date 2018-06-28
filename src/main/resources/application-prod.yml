@@ -1,0 +1,12 @@
+logging:
+    level:
+        ROOT: INFO
+        com.dempseywood: DEBUG
+        io.github.jhipster: DEBUG
+    file: /opt/batch/FleetNimbusExchange/prod/logs/dw.log
+spring:
+    datasource:
+        url: jdbc:sqlserver://DWL2016SQL\NIMBUS;databaseName=NimbusDWCivil
+fleet:
+    datasource:
+        url: jdbc:mysql://fleetmanagement-production.cyeux79q7obs.ap-southeast-2.rds.amazonaws.com:3306/FleetManagement?useUnicode=true&characterEncoding=utf8&useSSL=false

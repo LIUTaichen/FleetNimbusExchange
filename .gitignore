@@ -1,0 +1,39 @@
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+out/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+*.class
+out
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+*.class
+
+out/production/classes/com/dempsey/plantSynchronizer/entity/Project.class
+out/production/classes/com/dempsey/plantSynchronizer/entity/Project.class
+out/production/classes/com/dempsey/plantSynchronizer/entity/Project.class
+out/production/classes/com/dempsey/plantSynchronizer/PlantSynchronizerApplication.class
+out/production/classes/com/dempsey/plantSynchronizer/service/JobScheduleService.class
+out/production/classes/com/dempsey/plantSynchronizer/service/PlantListAPIService.class
+out/production/classes/com/dempsey/plantSynchronizer/util/PlantsUtil.class
+out/production/resources/application.properties

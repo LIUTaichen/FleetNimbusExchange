@@ -1,0 +1,317 @@
+2017-12-04 14:28:58.312  INFO 16416 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : Starting PlantSynchronizerApplication on DWL-HP450-67Z with PID 16416 (C:\Users\jason.liu\Workspaces\java\synchronizer\plantSynchronizer\out\production\classes started by Jason.Liu in C:\Users\jason.liu\Workspaces\java\synchronizer\plantSynchronizer)
+2017-12-04 14:28:58.312  INFO 16416 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : No active profile set, falling back to default profiles: default
+2017-12-04 14:28:58.437  INFO 16416 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1163aebf: startup date [Mon Dec 04 14:28:58 NZDT 2017]; root of context hierarchy
+2017-12-04 14:29:02.146  INFO 16416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-12-04 14:29:02.178  INFO 16416 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-12-04 14:29:02.178  INFO 16416 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-12-04 14:29:02.193  INFO 16416 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_151\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files\Apache\apache-maven-3.5.2\bin;C:\Users\jason.liu\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\jason.liu\AppData\Local\GitHubDesktop\bin;.]
+2017-12-04 14:29:02.396  INFO 16416 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-12-04 14:29:02.396  INFO 16416 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3959 ms
+2017-12-04 14:29:02.678  INFO 16416 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-12-04 14:29:02.678  INFO 16416 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-12-04 14:29:02.678  INFO 16416 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-12-04 14:29:02.678  INFO 16416 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-12-04 14:29:02.678  INFO 16416 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-12-04 14:29:03.084  INFO 16416 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-12-04 14:29:03.881  INFO 16416 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-12-04 14:29:03.967  INFO 16416 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-12-04 14:29:04.003  INFO 16416 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-12-04 14:29:04.112  INFO 16416 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.12.Final}
+2017-12-04 14:29:04.112  INFO 16416 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-12-04 14:29:04.190  INFO 16416 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-12-04 14:29:04.362  INFO 16416 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2017-12-04 14:29:05.202  INFO 16416 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-12-04 14:29:05.337  INFO 16416 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-12-04 14:29:06.498  INFO 16416 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1163aebf: startup date [Mon Dec 04 14:28:58 NZDT 2017]; root of context hierarchy
+2017-12-04 14:29:06.554  WARN 16416 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2017-12-04 14:29:06.623  INFO 16416 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api],methods=[GET],produces=[application/json]}" onto public java.lang.String com.dempsey.plantSynchronizer.controller.PlantController.updatePlants()
+2017-12-04 14:29:06.629  INFO 16416 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-12-04 14:29:06.630  INFO 16416 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-04 14:29:06.691  INFO 16416 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:29:06.691  INFO 16416 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:29:06.762  INFO 16416 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:29:06.982  INFO 16416 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-12-04 14:29:07.044  INFO 16416 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-12-04 14:29:07.044  INFO 16416 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-12-04 14:29:07.044  INFO 16416 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-12-04 14:29:07.107  INFO 16416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-12-04 14:29:07.122  INFO 16416 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : Started PlantSynchronizerApplication in 9.551 seconds (JVM running for 10.698)
+2017-12-04 14:36:12.874  INFO 2920 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : Starting PlantSynchronizerApplication on DWL-HP450-67Z with PID 2920 (C:\Users\jason.liu\Workspaces\java\synchronizer\plantSynchronizer\out\production\classes started by Jason.Liu in C:\Users\jason.liu\Workspaces\java\synchronizer\plantSynchronizer)
+2017-12-04 14:36:12.874  INFO 2920 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : No active profile set, falling back to default profiles: default
+2017-12-04 14:36:12.983  INFO 2920 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@54981242: startup date [Mon Dec 04 14:36:12 NZDT 2017]; root of context hierarchy
+2017-12-04 14:36:15.660  INFO 2920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-12-04 14:36:15.676  INFO 2920 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-12-04 14:36:15.676  INFO 2920 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-12-04 14:36:15.691  INFO 2920 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_151\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files\Apache\apache-maven-3.5.2\bin;C:\Users\jason.liu\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\jason.liu\AppData\Local\GitHubDesktop\bin;.]
+2017-12-04 14:36:15.785  INFO 2920 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-12-04 14:36:15.801  INFO 2920 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2818 ms
+2017-12-04 14:36:15.973  INFO 2920 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-12-04 14:36:15.973  INFO 2920 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-12-04 14:36:15.973  INFO 2920 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-12-04 14:36:15.973  INFO 2920 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-12-04 14:36:15.973  INFO 2920 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-12-04 14:36:16.301  INFO 2920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-12-04 14:36:17.369  INFO 2920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-12-04 14:36:17.431  INFO 2920 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-12-04 14:36:17.463  INFO 2920 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-12-04 14:36:17.558  INFO 2920 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.12.Final}
+2017-12-04 14:36:17.558  INFO 2920 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-12-04 14:36:17.621  INFO 2920 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-12-04 14:36:17.777  INFO 2920 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2017-12-04 14:36:18.699  INFO 2920 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-12-04 14:36:18.792  INFO 2920 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-12-04 14:36:19.838  INFO 2920 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@54981242: startup date [Mon Dec 04 14:36:12 NZDT 2017]; root of context hierarchy
+2017-12-04 14:36:19.885  WARN 2920 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2017-12-04 14:36:19.932  INFO 2920 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api],methods=[GET],produces=[application/json]}" onto public java.lang.String com.dempsey.plantSynchronizer.controller.PlantController.updatePlants()
+2017-12-04 14:36:19.932  INFO 2920 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-12-04 14:36:19.932  INFO 2920 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-04 14:36:19.979  INFO 2920 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:36:19.979  INFO 2920 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:36:20.026  INFO 2920 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:36:20.213  INFO 2920 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-12-04 14:36:20.260  INFO 2920 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-12-04 14:36:20.260  INFO 2920 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-12-04 14:36:20.276  INFO 2920 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-12-04 14:36:20.323  INFO 2920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-12-04 14:36:20.338  INFO 2920 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : Started PlantSynchronizerApplication in 8.127 seconds (JVM running for 8.902)
+2017-12-04 14:42:49.392  INFO 18332 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : Starting PlantSynchronizerApplication on DWL-HP450-67Z with PID 18332 (C:\Users\jason.liu\Workspaces\java\synchronizer\plantSynchronizer\out\production\classes started by Jason.Liu in C:\Users\jason.liu\Workspaces\java\synchronizer\plantSynchronizer)
+2017-12-04 14:42:49.392  INFO 18332 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : No active profile set, falling back to default profiles: default
+2017-12-04 14:42:49.470  INFO 18332 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@28927a89: startup date [Mon Dec 04 14:42:49 NZDT 2017]; root of context hierarchy
+2017-12-04 14:42:52.074  INFO 18332 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-12-04 14:42:52.090  INFO 18332 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-12-04 14:42:52.090  INFO 18332 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-12-04 14:42:52.105  INFO 18332 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_151\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files\Apache\apache-maven-3.5.2\bin;C:\Users\jason.liu\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\jason.liu\AppData\Local\GitHubDesktop\bin;.]
+2017-12-04 14:42:52.215  INFO 18332 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-12-04 14:42:52.215  INFO 18332 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2745 ms
+2017-12-04 14:42:52.402  INFO 18332 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-12-04 14:42:52.402  INFO 18332 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-12-04 14:42:52.402  INFO 18332 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-12-04 14:42:52.402  INFO 18332 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-12-04 14:42:52.402  INFO 18332 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-12-04 14:42:52.715  INFO 18332 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-12-04 14:42:53.641  INFO 18332 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-12-04 14:42:53.704  INFO 18332 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-12-04 14:42:53.735  INFO 18332 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-12-04 14:42:53.845  INFO 18332 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.12.Final}
+2017-12-04 14:42:53.845  INFO 18332 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-12-04 14:42:53.938  INFO 18332 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-12-04 14:42:54.110  INFO 18332 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2017-12-04 14:42:54.912  INFO 18332 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-12-04 14:42:55.001  INFO 18332 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-12-04 14:42:56.029  INFO 18332 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@28927a89: startup date [Mon Dec 04 14:42:49 NZDT 2017]; root of context hierarchy
+2017-12-04 14:42:56.076  WARN 18332 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2017-12-04 14:42:56.123  INFO 18332 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api],methods=[GET],produces=[application/json]}" onto public java.lang.String com.dempsey.plantSynchronizer.controller.PlantController.updatePlants()
+2017-12-04 14:42:56.123  INFO 18332 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-12-04 14:42:56.123  INFO 18332 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-04 14:42:56.170  INFO 18332 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:42:56.170  INFO 18332 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:42:56.217  INFO 18332 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:42:56.436  INFO 18332 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-12-04 14:42:56.482  INFO 18332 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-12-04 14:42:56.498  INFO 18332 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-12-04 14:42:56.498  INFO 18332 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-12-04 14:42:56.561  INFO 18332 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-12-04 14:42:56.561  INFO 18332 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : Started PlantSynchronizerApplication in 7.788 seconds (JVM running for 8.544)
+2017-12-04 14:43:53.609  INFO 18408 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : Starting PlantSynchronizerApplication on DWL-HP450-67Z with PID 18408 (C:\Users\jason.liu\Workspaces\java\synchronizer\plantSynchronizer\out\production\classes started by Jason.Liu in C:\Users\jason.liu\Workspaces\java\synchronizer\plantSynchronizer)
+2017-12-04 14:43:53.671  INFO 18408 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : No active profile set, falling back to default profiles: default
+2017-12-04 14:43:53.781  INFO 18408 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@f598c9f: startup date [Mon Dec 04 14:43:53 NZDT 2017]; root of context hierarchy
+2017-12-04 14:43:56.791  INFO 18408 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-12-04 14:43:56.806  INFO 18408 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-12-04 14:43:56.806  INFO 18408 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-12-04 14:43:56.822  INFO 18408 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_151\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files\Apache\apache-maven-3.5.2\bin;C:\Users\jason.liu\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\jason.liu\AppData\Local\GitHubDesktop\bin;.]
+2017-12-04 14:43:56.941  INFO 18408 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-12-04 14:43:56.941  INFO 18408 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3160 ms
+2017-12-04 14:43:57.119  INFO 18408 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-12-04 14:43:57.141  INFO 18408 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-12-04 14:43:57.141  INFO 18408 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-12-04 14:43:57.142  INFO 18408 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-12-04 14:43:57.142  INFO 18408 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-12-04 14:43:57.463  INFO 18408 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-12-04 14:43:58.491  INFO 18408 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-12-04 14:43:58.565  INFO 18408 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-12-04 14:43:58.599  INFO 18408 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-12-04 14:43:58.751  INFO 18408 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.12.Final}
+2017-12-04 14:43:58.753  INFO 18408 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-12-04 14:43:58.833  INFO 18408 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-12-04 14:43:58.983  INFO 18408 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2017-12-04 14:43:59.907  INFO 18408 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-12-04 14:43:59.985  INFO 18408 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-12-04 14:44:01.147  INFO 18408 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@f598c9f: startup date [Mon Dec 04 14:43:53 NZDT 2017]; root of context hierarchy
+2017-12-04 14:44:01.208  WARN 18408 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2017-12-04 14:44:01.266  INFO 18408 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api],methods=[GET],produces=[application/json]}" onto public java.lang.String com.dempsey.plantSynchronizer.controller.PlantController.updatePlants()
+2017-12-04 14:44:01.272  INFO 18408 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-12-04 14:44:01.275  INFO 18408 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-04 14:44:01.336  INFO 18408 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:44:01.336  INFO 18408 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:44:01.388  INFO 18408 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:44:01.599  INFO 18408 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-12-04 14:44:01.683  INFO 18408 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-12-04 14:44:01.684  INFO 18408 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-12-04 14:44:01.692  INFO 18408 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-12-04 14:44:01.754  INFO 18408 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-12-04 14:44:01.757  INFO 18408 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : Started PlantSynchronizerApplication in 8.835 seconds (JVM running for 9.564)
+2017-12-04 14:45:08.639  INFO 7248 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : Starting PlantSynchronizerApplication on DWL-HP450-67Z with PID 7248 (C:\Users\jason.liu\Workspaces\java\synchronizer\plantSynchronizer\out\production\classes started by Jason.Liu in C:\Users\jason.liu\Workspaces\java\synchronizer\plantSynchronizer)
+2017-12-04 14:45:08.639  INFO 7248 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : No active profile set, falling back to default profiles: default
+2017-12-04 14:45:08.764  INFO 7248 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@f598c9f: startup date [Mon Dec 04 14:45:08 NZDT 2017]; root of context hierarchy
+2017-12-04 14:45:11.827  INFO 7248 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2017-12-04 14:45:11.842  INFO 7248 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-12-04 14:45:11.842  INFO 7248 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-12-04 14:45:11.858  INFO 7248 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_151\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files\Apache\apache-maven-3.5.2\bin;C:\Users\jason.liu\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\jason.liu\AppData\Local\GitHubDesktop\bin;.]
+2017-12-04 14:45:11.983  INFO 7248 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-12-04 14:45:11.983  INFO 7248 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3219 ms
+2017-12-04 14:45:12.233  INFO 7248 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-12-04 14:45:12.233  INFO 7248 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-12-04 14:45:12.233  INFO 7248 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-12-04 14:45:12.233  INFO 7248 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-12-04 14:45:12.233  INFO 7248 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-12-04 14:45:12.639  INFO 7248 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : testdb - Starting...
+2017-12-04 14:45:13.785  INFO 7248 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : testdb - Start completed.
+2017-12-04 14:45:13.864  INFO 7248 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-12-04 14:45:13.879  INFO 7248 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-12-04 14:45:14.020  INFO 7248 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.12.Final}
+2017-12-04 14:45:14.020  INFO 7248 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-12-04 14:45:14.098  INFO 7248 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-12-04 14:45:14.286  INFO 7248 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2017-12-04 14:45:15.184  INFO 7248 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-12-04 14:45:15.308  INFO 7248 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-12-04 14:45:16.704  INFO 7248 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@f598c9f: startup date [Mon Dec 04 14:45:08 NZDT 2017]; root of context hierarchy
+2017-12-04 14:45:16.767  WARN 7248 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2017-12-04 14:45:16.811  INFO 7248 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api],methods=[GET],produces=[application/json]}" onto public java.lang.String com.dempsey.plantSynchronizer.controller.PlantController.updatePlants()
+2017-12-04 14:45:16.813  INFO 7248 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-12-04 14:45:16.813  INFO 7248 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-12-04 14:45:16.860  INFO 7248 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:45:16.860  INFO 7248 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:45:16.923  INFO 7248 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-12-04 14:45:17.173  INFO 7248 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-12-04 14:45:17.265  INFO 7248 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-12-04 14:45:17.266  INFO 7248 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-12-04 14:45:17.266  INFO 7248 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2017-12-04 14:45:17.282  INFO 7248 --- [restartedMain] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2017-12-04 14:45:17.351  INFO 7248 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http)
+2017-12-04 14:45:17.354  INFO 7248 --- [restartedMain] c.d.p.PlantSynchronizerApplication       : Started PlantSynchronizerApplication in 9.372 seconds (JVM running for 10.196)
+2017-12-04 14:46:00.012  INFO 7248 --- [pool-2-thread-1] c.d.p.service.JobScheduleService         : running scheduled synchronization
+2017-12-04 14:46:02.867  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : values found
+2017-12-04 14:46:02.867  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : number of entries: 772
+2017-12-04 14:46:05.759  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : duplicate fleet Id Z841M
+2017-12-04 14:46:05.759  INFO 7248 --- [pool-2-thread-1] c.d.plantSynchronizer.util.PlantsUtil    : p1  4 axle tipper trailer ETL 1   p2  4 Axle Tipper Trailer 1
+2017-12-04 14:46:05.759  INFO 7248 --- [pool-2-thread-1] c.d.plantSynchronizer.util.PlantsUtil    :  taking p2 because p1 has empty category
+2017-12-04 14:46:05.759  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : duplicate fleet Id D247Z
+2017-12-04 14:46:05.759  INFO 7248 --- [pool-2-thread-1] c.d.plantSynchronizer.util.PlantsUtil    : p1  MTE 4 Axle Trailer 1   p2  4 Axle Tipper Trailer 1
+2017-12-04 14:46:05.759  INFO 7248 --- [pool-2-thread-1] c.d.plantSynchronizer.util.PlantsUtil    :  taking p2 because it has fresher last log date
+2017-12-04 14:46:05.759  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : duplicate fleet Id D05
+2017-12-04 14:46:05.759  INFO 7248 --- [pool-2-thread-1] c.d.plantSynchronizer.util.PlantsUtil    : p1  Komatsu D155a-3 Dozer & Scoop 1   p2  Doosan 14t 60
+2017-12-04 14:46:05.759  INFO 7248 --- [pool-2-thread-1] c.d.plantSynchronizer.util.PlantsUtil    :  taking p1 because p2 has empty category
+2017-12-04 14:46:05.759  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : size of plant list : 506
+2017-12-04 14:46:05.759  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : found difference in row 61 Column : Maintenance Due , original value :  12290 , new value from Shirley : 13100
+2017-12-04 14:46:05.759  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : found difference in row 61 Column : Units Til Maintenance , original value :  -26 , new value from Shirley : 784
+2017-12-04 14:46:05.790  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : Calling sheets api to update plant list.
+2017-12-04 14:46:06.822  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : Result of sheet update: {
+  "responses" : [ {
+    "spreadsheetId" : "16VdfZZNiHPtd9f6MkXjOhXMrvXtTBRZ2wazjracgYkw",
+    "updatedCells" : 1,
+    "updatedColumns" : 1,
+    "updatedRange" : "Plants!O61",
+    "updatedRows" : 1
+  }, {
+    "spreadsheetId" : "16VdfZZNiHPtd9f6MkXjOhXMrvXtTBRZ2wazjracgYkw",
+    "updatedCells" : 1,
+    "updatedColumns" : 1,
+    "updatedRange" : "Plants!Q61",
+    "updatedRows" : 1
+  } ],
+  "spreadsheetId" : "16VdfZZNiHPtd9f6MkXjOhXMrvXtTBRZ2wazjracgYkw",
+  "totalUpdatedCells" : 2,
+  "totalUpdatedColumns" : 2,
+  "totalUpdatedRows" : 1,
+  "totalUpdatedSheets" : 1
+}
+2017-12-04 14:46:06.822  INFO 7248 --- [pool-2-thread-1] c.d.p.service.JobScheduleService         : scheduled synchronization finished
+2017-12-04 15:46:00.038  INFO 7248 --- [pool-2-thread-1] c.d.p.service.JobScheduleService         : running scheduled synchronization
+2017-12-04 15:46:02.298  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : values found
+2017-12-04 15:46:02.299  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : number of entries: 772
+2017-12-04 15:46:02.760  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : duplicate fleet Id Z841M
+2017-12-04 15:46:02.760  INFO 7248 --- [pool-2-thread-1] c.d.plantSynchronizer.util.PlantsUtil    : p1  4 axle tipper trailer ETL 1   p2  4 Axle Tipper Trailer 1
+2017-12-04 15:46:02.760  INFO 7248 --- [pool-2-thread-1] c.d.plantSynchronizer.util.PlantsUtil    :  taking p2 because p1 has empty category
+2017-12-04 15:46:02.761  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : duplicate fleet Id D247Z
+2017-12-04 15:46:02.761  INFO 7248 --- [pool-2-thread-1] c.d.plantSynchronizer.util.PlantsUtil    : p1  MTE 4 Axle Trailer 1   p2  4 Axle Tipper Trailer 1
+2017-12-04 15:46:02.761  INFO 7248 --- [pool-2-thread-1] c.d.plantSynchronizer.util.PlantsUtil    :  taking p2 because it has fresher last log date
+2017-12-04 15:46:02.761  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : duplicate fleet Id D05
+2017-12-04 15:46:02.761  INFO 7248 --- [pool-2-thread-1] c.d.plantSynchronizer.util.PlantsUtil    : p1  Komatsu D155a-3 Dozer & Scoop 1   p2  Doosan 14t 60
+2017-12-04 15:46:02.762  INFO 7248 --- [pool-2-thread-1] c.d.plantSynchronizer.util.PlantsUtil    :  taking p1 because p2 has empty category
+2017-12-04 15:46:02.762  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : size of plant list : 507
+2017-12-04 15:46:02.766  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : found difference in row 150 Column : RUC Due , original value :  293364 , new value from Shirley : 298364
+2017-12-04 15:46:02.767  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : found difference in row 183 Column : RUC Due , original value :  237010 , new value from Shirley : 242010
+2017-12-04 15:46:02.768  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : found difference in row 194 Column : RUC Due , original value :  225001 , new value from Shirley : 230001
+2017-12-04 15:46:02.776  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : found difference in row 701 Column : Hub KM , original value :   , new value from Shirley : 0
+2017-12-04 15:46:02.776  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : found difference in row 701 Column : Maintenance Due , original value :   , new value from Shirley : 0
+2017-12-04 15:46:02.777  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : found difference in row 701 Column : Units Til Maintenance , original value :   , new value from Shirley : 0
+2017-12-04 15:46:02.778  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : found difference in row 701 Column : RUC Due , original value :   , new value from Shirley : 0
+2017-12-04 15:46:02.778  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : found difference in row 701 Column : Last Log , original value :   , new value from Shirley : 0
+2017-12-04 15:46:02.779  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : Calling sheets api to update plant list.
+2017-12-04 15:46:04.575  INFO 7248 --- [pool-2-thread-1] c.d.p.service.PlantListAPIService        : Result of sheet update: {
+  "responses" : [ {
+    "spreadsheetId" : "16VdfZZNiHPtd9f6MkXjOhXMrvXtTBRZ2wazjracgYkw",
+    "updatedCells" : 1,
+    "updatedColumns" : 1,
+    "updatedRange" : "Plants!U150",
+    "updatedRows" : 1
+  }, {
+    "spreadsheetId" : "16VdfZZNiHPtd9f6MkXjOhXMrvXtTBRZ2wazjracgYkw",
+    "updatedCells" : 1,
+    "updatedColumns" : 1,
+    "updatedRange" : "Plants!U183",
+    "updatedRows" : 1
+  }, {
+    "spreadsheetId" : "16VdfZZNiHPtd9f6MkXjOhXMrvXtTBRZ2wazjracgYkw",
+    "updatedCells" : 1,
+    "updatedColumns" : 1,
+    "updatedRange" : "Plants!U194",
+    "updatedRows" : 1
+  }, {
+    "spreadsheetId" : "16VdfZZNiHPtd9f6MkXjOhXMrvXtTBRZ2wazjracgYkw",
+    "updatedCells" : 1,
+    "updatedColumns" : 1,
+    "updatedRange" : "Plants!T701",
+    "updatedRows" : 1
+  }, {
+    "spreadsheetId" : "16VdfZZNiHPtd9f6MkXjOhXMrvXtTBRZ2wazjracgYkw",
+    "updatedCells" : 1,
+    "updatedColumns" : 1,
+    "updatedRange" : "Plants!O701",
+    "updatedRows" : 1
+  }, {
+    "spreadsheetId" : "16VdfZZNiHPtd9f6MkXjOhXMrvXtTBRZ2wazjracgYkw",
+    "updatedCells" : 1,
+    "updatedColumns" : 1,
+    "updatedRange" : "Plants!Q701",
+    "updatedRows" : 1
+  }, {
+    "spreadsheetId" : "16VdfZZNiHPtd9f6MkXjOhXMrvXtTBRZ2wazjracgYkw",
+    "updatedCells" : 1,
+    "updatedColumns" : 1,
+    "updatedRange" : "Plants!U701",
+    "updatedRows" : 1
+  }, {
+    "spreadsheetId" : "16VdfZZNiHPtd9f6MkXjOhXMrvXtTBRZ2wazjracgYkw",
+    "updatedCells" : 1,
+    "updatedColumns" : 1,
+    "updatedRange" : "Plants!L701",
+    "updatedRows" : 1
+  } ],
+  "spreadsheetId" : "16VdfZZNiHPtd9f6MkXjOhXMrvXtTBRZ2wazjracgYkw",
+  "totalUpdatedCells" : 8,
+  "totalUpdatedColumns" : 5,
+  "totalUpdatedRows" : 4,
+  "totalUpdatedSheets" : 1
+}
+2017-12-04 15:46:04.575  INFO 7248 --- [pool-2-thread-1] c.d.p.service.JobScheduleService         : scheduled synchronization finished
