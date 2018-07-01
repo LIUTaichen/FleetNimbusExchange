@@ -1,8 +1,5 @@
 package com.dempsey.plantSynchronizer;
 
-import com.dempsey.plantSynchronizer.fleet.repository.NiggleRepository;
-import com.dempsey.plantSynchronizer.fleet.repository.FleetPlantRepository;
-import com.dempsey.plantSynchronizer.nimbus.dao.NimbusCivilPlantRepository;
 import com.dempsey.plantSynchronizer.nimbus.service.CategorySyncService;
 import com.dempsey.plantSynchronizer.nimbus.service.PlantSyncService;
 import org.slf4j.Logger;

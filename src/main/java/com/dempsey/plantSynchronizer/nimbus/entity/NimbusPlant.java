@@ -15,7 +15,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name="assetitems")
-public class NimbusCivilPlant implements Serializable {
+public class NimbusPlant implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -77,8 +77,9 @@ public class NimbusCivilPlant implements Serializable {
     @Column(name="u_vinnumber")
     private String vinNumber;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "u_hirestatus")
+//    @Enumerated(EnumType.STRING)
+//    @Column(name = "u_hirestatus")
+    @Transient
     private HireStatus hireStatus;
 
     @Column(name="closed")
@@ -89,7 +90,7 @@ public class NimbusCivilPlant implements Serializable {
     private Set<ApiRequest> requests = new HashSet<ApiRequest>();
 
 
-    public NimbusCivilPlant() {
+    public NimbusPlant() {
     }
 
 
@@ -263,7 +264,7 @@ public class NimbusCivilPlant implements Serializable {
 
     @Override
     public String toString() {
-        return "NimbusCivilPlant{" +
+        return "NimbusPlant{" +
                 "id=" + id +
                 ", cert_Due=" + cert_Due +
                 ", description='" + description + '\'' +

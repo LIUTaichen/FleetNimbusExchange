@@ -2,9 +2,9 @@ package com.dempsey.plantSynchronizer.nimbus.service;
 
 
 import com.dempsey.plantSynchronizer.nimbus.dao.ApiRequestRepository;
-import com.dempsey.plantSynchronizer.nimbus.dao.NimbusCivilPlantRepository;
+import com.dempsey.plantSynchronizer.nimbus.dao.NimbusPlantRepository;
 import com.dempsey.plantSynchronizer.nimbus.entity.ApiRequest;
-import com.dempsey.plantSynchronizer.nimbus.entity.NimbusCivilPlant;
+import com.dempsey.plantSynchronizer.nimbus.entity.NimbusPlant;
 import com.dempsey.plantSynchronizer.nimbus.util.SheetAPIUtil;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
@@ -49,7 +49,7 @@ public class PlantListAPIForNimbusService {
     private ApiRequestRepository apiRequestRepository;
 
     @Autowired
-    private NimbusCivilPlantRepository plantRepository;
+    private NimbusPlantRepository plantRepository;
 
     public Sheets getSheetsService() throws IOException, GeneralSecurityException {
         HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
@@ -125,14 +125,14 @@ public class PlantListAPIForNimbusService {
         }
     }
 
-    public List<ValueRange> generateUpdate(Map<String, NimbusCivilPlant> plantMap, List<String> headers, List<Map<String, String>> converted){
+    public List<ValueRange> generateUpdate(Map<String, NimbusPlant> plantMap, List<String> headers, List<Map<String, String>> converted){
         List<ValueRange> updatesRequired = new ArrayList<ValueRange>();
         Map<Integer, String> projectMap = new HashMap<Integer, String>();
 
         for(Map<String, String> row: converted){
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
             String fleetId = row.get("Plant #");
-            NimbusCivilPlant plantInNimbus = plantMap.get(fleetId);
+            NimbusPlant plantInNimbus = plantMap.get(fleetId);
             if(plantInNimbus == null){
                 continue;
             }else{
@@ -203,9 +203,9 @@ public class PlantListAPIForNimbusService {
             }
         }
         log.debug("calling plantService");
-        List<NimbusCivilPlant> plants = plantRepository.findByFleetIdIsNotNullAndFleetIdIn(fleetIdInSheet);
+        List<NimbusPlant> plants = plantRepository.findByFleetIdIsNotNullAndFleetIdIn(fleetIdInSheet);
 
-        Map<String, NimbusCivilPlant> plantMap=   plants.stream().collect(Collectors.toMap(NimbusCivilPlant::getFleetId, p -> p, (s , a) -> {
+        Map<String, NimbusPlant> plantMap=   plants.stream().collect(Collectors.toMap(NimbusPlant::getFleetId, p -> p, (s , a) -> {
             return s;
         }));
 

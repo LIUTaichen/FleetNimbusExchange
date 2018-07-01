@@ -6,7 +6,7 @@ logging:
     file: /opt/batch/FleetNimbusExchange/uat/logs/dw.log
 spring:
     datasource:
-        url: jdbc:sqlserver://DWL2016SQL\NIMBUS;databaseName=NimbusDWCivilTest
+        url: jdbc:sqlserver://DWL2016SQL\NIMBUS;databaseName=NimbusDWPlantTest
 fleet:
     datasource:
         url: jdbc:mysql://fleetmanagement-staging.cyeux79q7obs.ap-southeast-2.rds.amazonaws.com:3306/FleetManagement?useUnicode=true&characterEncoding=utf8&useSSL=false

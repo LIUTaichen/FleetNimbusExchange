@@ -62,7 +62,7 @@ public class ApiRequest {
 
     @ManyToOne
     @JoinColumn(name = "u_editorassetitemid")
-    private NimbusCivilPlant asset;
+    private NimbusPlant asset;
 
     @Column(name="u_updateddatetime")
     private Date u_UpdatedDateTime;
@@ -277,11 +277,11 @@ public class ApiRequest {
         this.nextServiceEstDate = nextServiceEstDate;
     }
 
-    public NimbusCivilPlant getAsset() {
+    public NimbusPlant getAsset() {
         return asset;
     }
 
-    public void setAsset(NimbusCivilPlant asset) {
+    public void setAsset(NimbusPlant asset) {
         this.asset = asset;
     }
 

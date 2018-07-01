@@ -12,7 +12,7 @@ spring:
         livereload:
             enabled: false # we use gulp + BrowserSync for livereload
     datasource:
-        url: jdbc:sqlserver://DWL2016SQL\NIMBUS;databaseName=NimbusDWCivilTest
+        url: jdbc:sqlserver://DWL2016SQL\NIMBUS;databaseName=NimbusDWPlantTest
 fleet:
     datasource:
         url: jdbc:mysql://ubuntuserver.local:3306/FleetManagement?useUnicode=true&characterEncoding=utf8&useSSL=false

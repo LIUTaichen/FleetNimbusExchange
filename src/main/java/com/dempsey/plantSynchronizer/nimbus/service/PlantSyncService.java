@@ -8,8 +8,8 @@ import com.dempsey.plantSynchronizer.fleet.domain.enumeration.MeterUnit;
 import com.dempsey.plantSynchronizer.fleet.repository.CategoryRepository;
 import com.dempsey.plantSynchronizer.fleet.repository.CompanyRepository;
 import com.dempsey.plantSynchronizer.fleet.repository.FleetPlantRepository;
-import com.dempsey.plantSynchronizer.nimbus.dao.NimbusCivilPlantRepository;
-import com.dempsey.plantSynchronizer.nimbus.entity.NimbusCivilPlant;
+import com.dempsey.plantSynchronizer.nimbus.dao.NimbusPlantRepository;
+import com.dempsey.plantSynchronizer.nimbus.entity.NimbusPlant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 public class PlantSyncService {
 
     public static final String DEMPSEY_WOOD_CIVIL = "Dempsey Wood Civil";
-    private final NimbusCivilPlantRepository nimbusPlantRepository;
+    private final NimbusPlantRepository nimbusPlantRepository;
 
     private final FleetPlantRepository fleetPlantRepository;
 
@@ -35,23 +35,23 @@ public class PlantSyncService {
 
     private final CompanyRepository companyRepository;
 
-    public PlantSyncService(NimbusCivilPlantRepository nimbusPlantRepository, FleetPlantRepository fleetPlantRepository, CategoryRepository categoryRepository, CompanyRepository companyRepository) {
+    public PlantSyncService(NimbusPlantRepository nimbusPlantRepository, FleetPlantRepository fleetPlantRepository, CategoryRepository categoryRepository, CompanyRepository companyRepository) {
         this.nimbusPlantRepository = nimbusPlantRepository;
         this.fleetPlantRepository = fleetPlantRepository;
         this.categoryRepository = categoryRepository;
         this.companyRepository = companyRepository;
     }
     public List<Plant> diff(){
-        List<com.dempsey.plantSynchronizer.nimbus.entity.NimbusCivilPlant> nimbusPlants = nimbusPlantRepository.findByFleetIdIsNotNullAndClosedFalse();
+        List<NimbusPlant> nimbusPlants = nimbusPlantRepository.findByFleetIdIsNotNullAndClosedFalse();
         List<Plant> fleetPlants = fleetPlantRepository.findAll();
         Map<String, Plant> fleetPlantMap = fleetPlants.stream().collect(Collectors.toMap(plant -> plant.getFleetId(), plant -> plant ));
-        Map<String, com.dempsey.plantSynchronizer.nimbus.entity.NimbusCivilPlant> nimbusPlantMap = nimbusPlants.stream()
+        Map<String, NimbusPlant> nimbusPlantMap = nimbusPlants.stream()
                 .collect(Collectors.toMap(plant -> plant.getFleetId(), plant -> plant ));
 
         List<Plant> toBeCreated = new ArrayList<Plant>();
         List<Plant> toBeUpdated = new ArrayList<Plant>();
         nimbusPlantMap.keySet().forEach( key -> {
-            NimbusCivilPlant nimbusPlant = nimbusPlantMap.get(key);
+            NimbusPlant nimbusPlant = nimbusPlantMap.get(key);
             if(fleetPlantMap.containsKey(key)){
                 Plant fleetPlant = fleetPlantMap.get(key);
                 String originalSnapshot = getSnapshot(fleetPlant);
@@ -92,7 +92,7 @@ public class PlantSyncService {
 
 
 
-    public Plant updatePlantWithNimbusData(Plant plant, NimbusCivilPlant civilPlant){
+    public Plant updatePlantWithNimbusData(Plant plant, NimbusPlant civilPlant){
         Category category = null;
         if(civilPlant.getAssetSubGroup() != null){
             category = categoryRepository.findOneByCategory(civilPlant.getAssetSubGroup().getDescription());
@@ -101,7 +101,7 @@ public class PlantSyncService {
         plant.setDescription(civilPlant.getDescription());
         plant.setFleetId(civilPlant.getFleetId());
         plant.setGpsDeviceSerial(civilPlant.getDeviceSerialNo());
-        plant.setHireStatus(civilPlant.getHireStatus());
+        //plant.setHireStatus(civilPlant.getHireStatus());
         plant.setMaintenanceDueAt(civilPlant.getMaintenance_Due());
         plant.setHubboReading(civilPlant.getHub_Reading());
         MeterUnit meter = null;
