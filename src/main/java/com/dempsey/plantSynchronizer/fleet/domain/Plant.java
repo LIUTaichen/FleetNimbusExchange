@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
+import com.dempsey.plantSynchronizer.fleet.domain.enumeration.MaintenanceType;
 import com.dempsey.plantSynchronizer.fleet.domain.enumeration.MeterUnit;
 
 import com.dempsey.plantSynchronizer.fleet.domain.enumeration.HireStatus;
@@ -59,10 +60,22 @@ public class Plant extends AbstractAuditingEntity implements Serializable {
     private String imageContentType;
 
     @Column(name = "tank_size")
-    private Integer tankSize;
+    private Double tankSize;
+
+    @Column(name = "meter_reading")
+    private Double meterReading;
 
     @Column(name = "maintenance_due_at")
-    private Integer maintenanceDueAt;
+    private Double maintenanceDueAt;
+
+    @Column(name = "maintenance_due_date")
+    private Instant maintenanceDueDate;
+
+    @Column(name = "last_maintenance_date")
+    private Instant lastMaintenanceDate;
+
+    @Column(name = "last_maintenance_at")
+    private Double lastMaintenanceAt;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "meter_unit")
@@ -72,13 +85,13 @@ public class Plant extends AbstractAuditingEntity implements Serializable {
     private Instant certificateDueDate;
 
     @Column(name = "ruc_due_at_km")
-    private Integer rucDueAtKm;
+    private Double rucDueAtKm;
 
     @Column(name = "hubbo_reading")
-    private Integer hubboReading;
+    private Double hubboReading;
 
     @Column(name = "load_capacity")
-    private Integer loadCapacity;
+    private Double loadCapacity;
 
     @Column(name = "hourly_rate")
     private Double hourlyRate;
@@ -92,6 +105,10 @@ public class Plant extends AbstractAuditingEntity implements Serializable {
 
     @Column(name = "gps_device_serial")
     private String gpsDeviceSerial;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "maintenance_type")
+    private MaintenanceType maintenanceType;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -262,30 +279,82 @@ public class Plant extends AbstractAuditingEntity implements Serializable {
         this.imageContentType = imageContentType;
     }
 
-    public Integer getTankSize() {
+    public Double getTankSize() {
         return tankSize;
     }
 
-    public Plant tankSize(Integer tankSize) {
+    public Plant tankSize(Double tankSize) {
         this.tankSize = tankSize;
         return this;
     }
 
-    public void setTankSize(Integer tankSize) {
+    public void setTankSize(Double tankSize) {
         this.tankSize = tankSize;
     }
 
-    public Integer getMaintenanceDueAt() {
+    public Double getMeterReading() {
+        return meterReading;
+    }
+
+    public Plant meterReading(Double meterReading) {
+        this.meterReading = meterReading;
+        return this;
+    }
+
+    public void setMeterReading(Double meterReading) {
+        this.meterReading = meterReading;
+    }
+
+    public Double getMaintenanceDueAt() {
         return maintenanceDueAt;
     }
 
-    public Plant maintenanceDueAt(Integer maintenanceDueAt) {
+    public Plant maintenanceDueAt(Double maintenanceDueAt) {
         this.maintenanceDueAt = maintenanceDueAt;
         return this;
     }
 
-    public void setMaintenanceDueAt(Integer maintenanceDueAt) {
+    public void setMaintenanceDueAt(Double maintenanceDueAt) {
         this.maintenanceDueAt = maintenanceDueAt;
+    }
+
+    public Instant getMaintenanceDueDate() {
+        return maintenanceDueDate;
+    }
+
+    public Plant maintenanceDueDate(Instant maintenanceDueDate) {
+        this.maintenanceDueDate = maintenanceDueDate;
+        return this;
+    }
+
+    public void setMaintenanceDueDate(Instant maintenanceDueDate) {
+        this.maintenanceDueDate = maintenanceDueDate;
+    }
+
+    public Instant getLastMaintenanceDate() {
+        return lastMaintenanceDate;
+    }
+
+    public Plant lastMaintenanceDate(Instant lastMaintenanceDate) {
+        this.lastMaintenanceDate = lastMaintenanceDate;
+        return this;
+    }
+
+    public void setLastMaintenanceDate(Instant lastMaintenanceDate) {
+        this.lastMaintenanceDate = lastMaintenanceDate;
+    }
+
+    public Double getLastMaintenanceAt() {
+        return lastMaintenanceAt;
+    }
+
+    public Plant lastMaintenanceAt(Double lastMaintenanceAt) {
+        this.lastMaintenanceAt = lastMaintenanceAt;
+        return this;
+    }
+
+    public void setLastMaintenanceAt(Double lastMaintenanceAt) {
+        this.lastMaintenanceAt = lastMaintenanceAt;
     }
 
     public MeterUnit getMeterUnit() {
@@ -314,42 +383,42 @@ public class Plant extends AbstractAuditingEntity implements Serializable {
         this.certificateDueDate = certificateDueDate;
     }
 
-    public Integer getRucDueAtKm() {
+    public Double getRucDueAtKm() {
         return rucDueAtKm;
     }
 
-    public Plant rucDueAtKm(Integer rucDueAtKm) {
+    public Plant rucDueAtKm(Double rucDueAtKm) {
         this.rucDueAtKm = rucDueAtKm;
         return this;
     }
 
-    public void setRucDueAtKm(Integer rucDueAtKm) {
+    public void setRucDueAtKm(Double rucDueAtKm) {
         this.rucDueAtKm = rucDueAtKm;
     }
 
-    public Integer getHubboReading() {
+    public Double getHubboReading() {
         return hubboReading;
     }
 
-    public Plant hubboReading(Integer hubboReading) {
+    public Plant hubboReading(Double hubboReading) {
         this.hubboReading = hubboReading;
         return this;
     }
 
-    public void setHubboReading(Integer hubboReading) {
+    public void setHubboReading(Double hubboReading) {
         this.hubboReading = hubboReading;
     }
 
-    public Integer getLoadCapacity() {
+    public Double getLoadCapacity() {
         return loadCapacity;
     }
 
-    public Plant loadCapacity(Integer loadCapacity) {
+    public Plant loadCapacity(Double loadCapacity) {
         this.loadCapacity = loadCapacity;
         return this;
     }
 
-    public void setLoadCapacity(Integer loadCapacity) {
+    public void setLoadCapacity(Double loadCapacity) {
         this.loadCapacity = loadCapacity;
     }
 
@@ -403,6 +472,19 @@ public class Plant extends AbstractAuditingEntity implements Serializable {
 
     public void setGpsDeviceSerial(String gpsDeviceSerial) {
         this.gpsDeviceSerial = gpsDeviceSerial;
+    }
+
+    public MaintenanceType getMaintenanceType() {
+        return maintenanceType;
+    }
+
+    public Plant maintenanceType(MaintenanceType maintenanceType) {
+        this.maintenanceType = maintenanceType;
+        return this;
+    }
+
+    public void setMaintenanceType(MaintenanceType maintenanceType) {
+        this.maintenanceType = maintenanceType;
     }
 
     public Location getLocation() {
@@ -494,29 +576,34 @@ public class Plant extends AbstractAuditingEntity implements Serializable {
     @Override
     public String toString() {
         return "Plant{" +
-            "id=" + getId() +
-            ", fleetId='" + getFleetId() + "'" +
-            ", name='" + getName() + "'" +
-            ", notes='" + getNotes() + "'" +
-            ", purchaseDate='" + getPurchaseDate() + "'" +
-            ", isActive='" + isIsActive() + "'" +
-            ", description='" + getDescription() + "'" +
-            ", vin='" + getVin() + "'" +
-            ", rego='" + getRego() + "'" +
-            ", dateOfManufacture='" + getDateOfManufacture() + "'" +
-            ", image='" + getImage() + "'" +
-            ", imageContentType='" + getImageContentType() + "'" +
-            ", tankSize=" + getTankSize() +
-            ", maintenanceDueAt=" + getMaintenanceDueAt() +
-            ", meterUnit='" + getMeterUnit() + "'" +
-            ", certificateDueDate='" + getCertificateDueDate() + "'" +
-            ", rucDueAtKm=" + getRucDueAtKm() +
-            ", hubboReading=" + getHubboReading() +
-            ", loadCapacity=" + getLoadCapacity() +
-            ", hourlyRate=" + getHourlyRate() +
-            ", registrationDueDate='" + getRegistrationDueDate() + "'" +
-            ", hireStatus='" + getHireStatus() + "'" +
-            ", gpsDeviceSerial='" + getGpsDeviceSerial() + "'" +
-            "}";
+                "id=" + getId() +
+                ", fleetId='" + getFleetId() + "'" +
+                ", name='" + getName() + "'" +
+                ", notes='" + getNotes() + "'" +
+                ", purchaseDate='" + getPurchaseDate() + "'" +
+                ", isActive='" + isIsActive() + "'" +
+                ", description='" + getDescription() + "'" +
+                ", vin='" + getVin() + "'" +
+                ", rego='" + getRego() + "'" +
+                ", dateOfManufacture='" + getDateOfManufacture() + "'" +
+                ", image='" + getImage() + "'" +
+                ", imageContentType='" + getImageContentType() + "'" +
+                ", tankSize=" + getTankSize() +
+                ", meterReading=" + getMeterReading() +
+                ", maintenanceDueAt=" + getMaintenanceDueAt() +
+                ", maintenanceDueDate='" + getMaintenanceDueDate() + "'" +
+                ", lastMaintenanceDate='" + getLastMaintenanceDate() + "'" +
+                ", lastMaintenanceAt=" + getLastMaintenanceAt() +
+                ", meterUnit='" + getMeterUnit() + "'" +
+                ", certificateDueDate='" + getCertificateDueDate() + "'" +
+                ", rucDueAtKm=" + getRucDueAtKm() +
+                ", hubboReading=" + getHubboReading() +
+                ", loadCapacity=" + getLoadCapacity() +
+                ", hourlyRate=" + getHourlyRate() +
+                ", registrationDueDate='" + getRegistrationDueDate() + "'" +
+                ", hireStatus='" + getHireStatus() + "'" +
+                ", gpsDeviceSerial='" + getGpsDeviceSerial() + "'" +
+                ", maintenanceType='" + getMaintenanceType() + "'" +
+                "}";
     }
 }

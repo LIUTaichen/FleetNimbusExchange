@@ -15,4 +15,4 @@ spring:
         url: jdbc:sqlserver://DWL2016SQL\NIMBUS;databaseName=NimbusDWPlantTest
 fleet:
     datasource:
-        url: jdbc:mysql://ubuntuserver.local:3306/FleetManagement?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://192.168.100.159:3306/FleetManagement?useUnicode=true&characterEncoding=utf8&useSSL=false

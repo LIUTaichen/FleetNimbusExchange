@@ -44,7 +44,7 @@ public class NimbusPlant implements Serializable {
     private String last_Log_Project;
 
     @Column(name="u_nextservicekm")
-    private Integer Maintenance_Due;
+    private Double Maintenance_Due;
 
     @Column(name="u_regonumber")
     private String registration;
@@ -53,7 +53,7 @@ public class NimbusPlant implements Serializable {
     private Date registration_Due_Date;
 
     @Column(name="u_rucdueatkm",precision=28, scale=6)
-    private Integer RUC_Due;
+    private Double RUC_Due;
 
     @Column(name="u_kmsuntilnextservice", precision=28, scale=6)
     private Integer units_Til_Maintenance;
@@ -162,11 +162,11 @@ public class NimbusPlant implements Serializable {
         this.last_Log_Project = last_Log_Project;
     }
 
-    public Integer getMaintenance_Due() {
+    public Double getMaintenance_Due() {
         return Maintenance_Due;
     }
 
-    public void setMaintenance_Due(Integer maintenance_Due) {
+    public void setMaintenance_Due(Double maintenance_Due) {
         Maintenance_Due = maintenance_Due;
     }
 
@@ -187,11 +187,11 @@ public class NimbusPlant implements Serializable {
         this.registration_Due_Date = registration_Due_Date;
     }
 
-    public Integer getRUC_Due() {
+    public Double getRUC_Due() {
         return RUC_Due;
     }
 
-    public void setRUC_Due(Integer RUC_Due) {
+    public void setRUC_Due(Double RUC_Due) {
         this.RUC_Due = RUC_Due;
     }
 
