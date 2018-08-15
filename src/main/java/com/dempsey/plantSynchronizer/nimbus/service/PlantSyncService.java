@@ -103,7 +103,7 @@ public class PlantSyncService {
         plant.setGpsDeviceSerial(civilPlant.getDeviceSerialNo());
         //plant.setHireStatus(civilPlant.getHireStatus());
         plant.setMaintenanceDueAt(civilPlant.getMaintenance_Due());
-        plant.setHubboReading(civilPlant.getHub_Reading());
+//        plant.setHubboReading(civilPlant.getHub_Reading());
         MeterUnit meter = null;
         if("Hrs".equals(civilPlant.getMeterType())){
             meter = MeterUnit.HOUR;
