@@ -28,6 +28,7 @@ public class CategorySyncService {
     }
 
     public void diff(){
+        log.info("category sync started");
         List<AssetSubGroup> subGroups = assetSubGroupRepository.findAllByDiscontinuedFalse();
         List<Category> categories = categoryRepository.findAll();
         Map<String, Category> categoryMap = categories.stream().collect(Collectors.toMap(category -> category.getCategory(), category -> category ));
@@ -51,6 +52,7 @@ public class CategorySyncService {
                 }
             }
         });
+        log.info("category sync finished");
     }
 
     public Category convertToCategory(AssetSubGroup sub){

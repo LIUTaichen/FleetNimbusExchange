@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -35,6 +36,12 @@ public class PlantSyncService {
 
     private final CompanyRepository companyRepository;
 
+    private Map<String, Category> categoryMap;
+
+    private Map<Long, Company> companyMap;
+
+    private Company dempseyWood;
+
     public PlantSyncService(NimbusPlantRepository nimbusPlantRepository, FleetPlantRepository fleetPlantRepository, CategoryRepository categoryRepository, CompanyRepository companyRepository) {
         this.nimbusPlantRepository = nimbusPlantRepository;
         this.fleetPlantRepository = fleetPlantRepository;
@@ -42,20 +49,29 @@ public class PlantSyncService {
         this.companyRepository = companyRepository;
     }
     public List<Plant> diff(){
+        log.debug("plant sync started");
         List<NimbusPlant> nimbusPlants = nimbusPlantRepository.findByFleetIdIsNotNullAndClosedFalse();
+        log.debug("successfully fetched " +nimbusPlants.size() + " plants from nimbus");
         List<Plant> fleetPlants = fleetPlantRepository.findAll();
+        log.debug("successfully fetched " +fleetPlants.size() + " plants from fleet");
         Map<String, Plant> fleetPlantMap = fleetPlants.stream().collect(Collectors.toMap(plant -> plant.getFleetId(), plant -> plant ));
+        log.debug("constructed fleet plants map");
         Map<String, NimbusPlant> nimbusPlantMap = nimbusPlants.stream()
                 .collect(Collectors.toMap(plant -> plant.getFleetId(), plant -> plant ));
-
+        log.debug("constructed nimbus plants map");
         List<Plant> toBeCreated = new ArrayList<Plant>();
         List<Plant> toBeUpdated = new ArrayList<Plant>();
         nimbusPlantMap.keySet().forEach( key -> {
+            log.debug("processing plantId " + key);
+            log.debug("start to find nimbus plant from map ");
             NimbusPlant nimbusPlant = nimbusPlantMap.get(key);
+            log.debug("searching for nimbus plant completed ");
             if(fleetPlantMap.containsKey(key)){
                 Plant fleetPlant = fleetPlantMap.get(key);
                 String originalSnapshot = getSnapshot(fleetPlant);
+                log.debug("start to update fleet plant with nimbus data ");
                 Plant updatedFromNimbus = updatePlantWithNimbusData(fleetPlant,nimbusPlant);
+                log.debug("finished to update fleet plant with nimbus data ");
                 String updatedSnapshot = getSnapshot(updatedFromNimbus);
 
                 if(!originalSnapshot.equals(updatedSnapshot)){
@@ -68,11 +84,14 @@ public class PlantSyncService {
             }else{
                 log.info("plant not found: " +  nimbusPlantMap.get(key).toString());
                 Plant plant = new Plant();
+                log.debug("start to update fleet plant with nimbus data ");
                 plant = updatePlantWithNimbusData(plant, nimbusPlant);
+                log.debug("finished to update fleet plant with nimbus data ");
                 setAuditField(plant);
                 log.info("found plant to be created in fleet management: " + plant.toString());
                 toBeCreated.add(plant);
             }
+            log.debug("processing for plantId " + key + " completed");
         });
 
 
@@ -87,7 +106,9 @@ public class PlantSyncService {
     @Transactional
     public void insertNewPlants(){
         List<Plant> toBeSaved = diff();
+        log.info("Saving " + toBeSaved.size() + " to fleet database");
         fleetPlantRepository.save(toBeSaved);
+        log.info("Saving completed");
     }
 
 
@@ -95,7 +116,7 @@ public class PlantSyncService {
     public Plant updatePlantWithNimbusData(Plant plant, NimbusPlant civilPlant){
         Category category = null;
         if(civilPlant.getAssetSubGroup() != null){
-            category = categoryRepository.findOneByCategory(civilPlant.getAssetSubGroup().getDescription());
+            category = getCategory(civilPlant.getAssetSubGroup().getDescription());
         }
         plant.setCategory(category);
         plant.setDescription(civilPlant.getDescription());
@@ -114,9 +135,9 @@ public class PlantSyncService {
         plant.setNotes(civilPlant.getNotes());
         Company owner = null;
         if(civilPlant.getOwnerId() != null ){
-            owner = companyRepository.findOne(civilPlant.getOwnerId().longValue());
+            owner = getOwner(civilPlant.getOwnerId().longValue());
         }else{
-            owner = companyRepository.findOneByCompany(DEMPSEY_WOOD_CIVIL);
+            owner = getDempseyWood();
         }
         plant.setOwner(owner);
         if(civilPlant.getRegistration_Due_Date() != null){
@@ -144,5 +165,27 @@ public class PlantSyncService {
         String owner = plant.getOwner() != null ? plant.getOwner().getId().toString() : "";
         sb.append("Owner=" + owner + " ");
         return sb.toString();
+    }
+
+    private Category getCategory(String category){
+        if(categoryMap == null) {
+            categoryMap = categoryRepository.findAll().stream().collect(Collectors.toMap(categoryItem -> categoryItem.getCategory(), categoryItem -> categoryItem ));
+        }
+        return categoryMap.get(category);
+    }
+
+    private Company getOwner(Long id){
+        if(companyMap == null ){
+            companyMap = new HashMap<>();
+            companyMap = companyRepository.findAll().stream().collect(Collectors.toMap(company -> company.getId(), company -> company ));
+        }
+        return companyMap.get(id);
+    }
+
+    private Company getDempseyWood(){
+        if(dempseyWood == null) {
+            dempseyWood = companyRepository.findOneByCompany(DEMPSEY_WOOD_CIVIL);
+        }
+        return dempseyWood;
     }
 }
