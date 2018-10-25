@@ -15,6 +15,9 @@ spring:
             enabled: false # we use gulp + BrowserSync for livereload
     datasource:
         url: jdbc:sqlserver://DWL2016SQL\NIMBUS;databaseName=NimbusDWPlantTest
+    jpa:
+        show-sql: false
+
 fleet:
     datasource:
         url: jdbc:mysql://192.168.100.159:3306/FleetManagement?useUnicode=true&characterEncoding=utf8&useSSL=false

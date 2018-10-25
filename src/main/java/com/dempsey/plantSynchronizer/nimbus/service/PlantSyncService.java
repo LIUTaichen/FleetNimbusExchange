@@ -4,12 +4,15 @@ import com.dempsey.plantSynchronizer.fleet.config.Constants;
 import com.dempsey.plantSynchronizer.fleet.domain.Category;
 import com.dempsey.plantSynchronizer.fleet.domain.Company;
 import com.dempsey.plantSynchronizer.fleet.domain.Plant;
+import com.dempsey.plantSynchronizer.fleet.domain.enumeration.MaintenanceType;
 import com.dempsey.plantSynchronizer.fleet.domain.enumeration.MeterUnit;
 import com.dempsey.plantSynchronizer.fleet.repository.CategoryRepository;
 import com.dempsey.plantSynchronizer.fleet.repository.CompanyRepository;
 import com.dempsey.plantSynchronizer.fleet.repository.FleetPlantRepository;
 import com.dempsey.plantSynchronizer.nimbus.dao.NimbusPlantRepository;
+import com.dempsey.plantSynchronizer.nimbus.dao.ResouceOwnerRepository;
 import com.dempsey.plantSynchronizer.nimbus.entity.NimbusPlant;
+import com.dempsey.plantSynchronizer.nimbus.entity.ResourceOwner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -36,17 +39,22 @@ public class PlantSyncService {
 
     private final CompanyRepository companyRepository;
 
+    private final ResouceOwnerRepository resouceOwnerRepository;
+
     private Map<String, Category> categoryMap;
 
-    private Map<Long, Company> companyMap;
+    private Map<String, Company> companyMap;
+
+    private Map<Integer, ResourceOwner> resourceOwnerMap;
 
     private Company dempseyWood;
 
-    public PlantSyncService(NimbusPlantRepository nimbusPlantRepository, FleetPlantRepository fleetPlantRepository, CategoryRepository categoryRepository, CompanyRepository companyRepository) {
+    public PlantSyncService(NimbusPlantRepository nimbusPlantRepository, FleetPlantRepository fleetPlantRepository, CategoryRepository categoryRepository, CompanyRepository companyRepository, ResouceOwnerRepository resouceOwnerRepository) {
         this.nimbusPlantRepository = nimbusPlantRepository;
         this.fleetPlantRepository = fleetPlantRepository;
         this.categoryRepository = categoryRepository;
         this.companyRepository = companyRepository;
+        this.resouceOwnerRepository = resouceOwnerRepository;
     }
     public List<Plant> diff(){
         log.debug("plant sync started");
@@ -124,18 +132,41 @@ public class PlantSyncService {
         plant.setGpsDeviceSerial(civilPlant.getDeviceSerialNo());
         //plant.setHireStatus(civilPlant.getHireStatus());
         plant.setMaintenanceDueAt(civilPlant.getMaintenance_Due());
-//        plant.setHubboReading(civilPlant.getHub_Reading());
+        if(civilPlant.getHub_Reading() != null && civilPlant.getHub_Reading() > 0){
+               plant.setHubboReading(new Double(civilPlant.getHub_Reading()));
+        }else{
+            plant.setHubboReading(null);
+        }
+
+
+
+
         MeterUnit meter = null;
         if("Hrs".equals(civilPlant.getMeterType())){
             meter = MeterUnit.HOUR;
+//            if(civilPlant.getHoursReading() != null && civilPlant.getHoursReading() > 0 ){
+//                plant.setMeterReading( civilPlant.getHoursReading());
+//            }
+            plant.setMaintenanceType(MaintenanceType.METER_BASED);
+
         }else if("Km".equals(civilPlant.getMeterType())){
             meter = MeterUnit.KM;
+//            if(civilPlant.getLast_Log() != null && civilPlant.getLast_Log() > 0 ){
+//                plant.setMeterReading( new Double(civilPlant.getLast_Log()));
+//            }
+            plant.setMaintenanceType(MaintenanceType.METER_BASED);
+
+        }else {
+            plant.setMaintenanceType(MaintenanceType.TIME_BASED);
         }
         plant.setMeterUnit(meter);
+
+
+
         plant.setNotes(civilPlant.getNotes());
         Company owner = null;
         if(civilPlant.getOwnerId() != null ){
-            owner = getOwner(civilPlant.getOwnerId().longValue());
+            owner = getOwner(civilPlant.getOwnerId());
         }else{
             owner = getDempseyWood();
         }
@@ -174,12 +205,17 @@ public class PlantSyncService {
         return categoryMap.get(category);
     }
 
-    private Company getOwner(Long id){
-        if(companyMap == null ){
-            companyMap = new HashMap<>();
-            companyMap = companyRepository.findAll().stream().collect(Collectors.toMap(company -> company.getId(), company -> company ));
+    private Company getOwner(int id){
+        if(resourceOwnerMap == null){
+            resourceOwnerMap = resouceOwnerRepository.findAll().stream().collect(Collectors.toMap(owner -> owner.getId(), owner -> owner ));
         }
-        return companyMap.get(id);
+
+        if(companyMap == null ){
+            companyMap = companyRepository.findAll().stream().collect(Collectors.toMap(company -> company.getAbbreviation(), company -> company ));
+        }
+
+        String creditorIndex = resourceOwnerMap.get(id).getCreditorIndex();
+        return companyMap.get(creditorIndex);
     }
 
     private Company getDempseyWood(){

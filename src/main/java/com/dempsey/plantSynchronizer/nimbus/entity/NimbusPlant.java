@@ -37,6 +37,9 @@ public class NimbusPlant implements Serializable {
     @Column(name="currentreading", precision=28, scale=6)
     private Integer last_Log;
 
+    @Column(name="u_hoursreading", precision=28, scale=6)
+    private Double hoursReading;
+
     @Column(name="datecurrentreading")
     private Date last_Log_Date;
 
@@ -84,11 +87,6 @@ public class NimbusPlant implements Serializable {
 
     @Column(name="closed")
     private Boolean closed;
-
-
-    @OneToMany(mappedBy = "asset")
-    private Set<ApiRequest> requests = new HashSet<ApiRequest>();
-
 
     public NimbusPlant() {
     }
@@ -140,6 +138,14 @@ public class NimbusPlant implements Serializable {
 
     public Integer getLast_Log() {
         return last_Log;
+    }
+
+    public Double getHoursReading() {
+        return hoursReading;
+    }
+
+    public void setHoursReading(Double hoursReading) {
+        this.hoursReading = hoursReading;
     }
 
     public void setLast_Log(Integer last_Log) {
@@ -271,6 +277,7 @@ public class NimbusPlant implements Serializable {
                 ", fleetId='" + fleetId + '\'' +
                 ", hub_Reading=" + hub_Reading +
                 ", last_Log=" + last_Log +
+                ", hoursReading=" + hoursReading +
                 ", last_Log_Date=" + last_Log_Date +
                 ", last_Log_Project='" + last_Log_Project + '\'' +
                 ", Maintenance_Due=" + Maintenance_Due +
@@ -297,12 +304,6 @@ public class NimbusPlant implements Serializable {
         this.hireStatus = hireStatus;
     }
 
-    public Set<ApiRequest> getRequests() {
-        return requests;
-    }
 
-    public void setRequests(Set<ApiRequest> requests) {
-        this.requests = requests;
-    }
 
 }

@@ -1,13 +1,14 @@
 logging:
     level:
-        ROOT: INFO
+        ROOT: WARN
         com.dempseywood: INFO
-        com.dempsey: INFO
+        com.dempsey: DEBUG
         io.github.jhipster: INFO
+        org.hibernate: WARN
     file: /opt/batch/FleetNimbusExchange/uat/logs/dw.log
 spring:
     datasource:
-        url: jdbc:sqlserver://DWL2016SQL\NIMBUS;databaseName=NimbusDWPlantTest
+        url: jdbc:sqlserver://DWL2016SQL\NIMBUS;databaseName=NimbusDWPlant
 fleet:
     datasource:
-        url: jdbc:mysql://fleetmanagement-staging.cyeux79q7obs.ap-southeast-2.rds.amazonaws.com:3306/FleetManagement?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://fleetmanagement-staging.cyeux79q7obs.ap-southeast-2.rds.amazonaws.com:3306/FleetManagement?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false

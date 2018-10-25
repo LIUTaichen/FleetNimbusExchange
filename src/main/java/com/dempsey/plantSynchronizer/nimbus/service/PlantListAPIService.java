@@ -142,7 +142,7 @@ public class PlantListAPIService {
         Map<Integer, String> ownerMap = new HashMap<Integer, String>();
 
         projectRepository.findAll().forEach(project -> projectMap.put(project.getId(), project.getProjectID()));
-        resourceOwnerRepository.findAll().forEach(owner -> ownerMap.put(owner.getId(),owner.getCompany()));
+        resourceOwnerRepository.findAll().forEach(owner -> ownerMap.put(owner.getId(),owner.getContact().getCompany()));
 
 
 

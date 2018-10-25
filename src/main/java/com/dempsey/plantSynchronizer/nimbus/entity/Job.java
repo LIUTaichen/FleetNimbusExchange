@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name="jobs")
+@Table(name="u_JobsOpenCivil")
 public class Job {
     @Id
     @Column(name="jobid", unique=true, nullable=false)
@@ -14,8 +14,14 @@ public class Job {
     @Column(name="jobnumber")
     private String jobNumber;
 
-    @OneToMany(mappedBy = "job")
-    private Set<ApiRequest> requests = new HashSet<ApiRequest>();
+    @Column(name="Description")
+    private String jobName;
+
+    @Column(name="SiteAddress")
+    private String siteAddress;
+
+    @Column(name="status")
+    private String status;
 
 
     public Integer getId() {
@@ -34,12 +40,29 @@ public class Job {
         this.jobNumber = jobNumber;
     }
 
-    public Set<ApiRequest> getRequests() {
-        return requests;
+    public String getJobName() {
+        return jobName;
     }
 
-    public void setRequests(Set<ApiRequest> requests) {
-        this.requests = requests;
+    public void setJobName(String jobName) {
+        this.jobName = jobName;
+    }
+
+    public String getSiteAddress() {
+        return siteAddress;
+    }
+
+    public void setSiteAddress(String siteAddress) {
+        this.siteAddress = siteAddress;
+    }
+
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -47,6 +70,11 @@ public class Job {
         return "Job{" +
                 "id=" + id +
                 ", jobNumber='" + jobNumber + '\'' +
+                ", jobName='" + jobName + '\'' +
+                ", siteAddress='" + siteAddress + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
+
+
 }

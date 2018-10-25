@@ -1,20 +1,24 @@
 package com.dempsey.plantSynchronizer.nimbus.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name="Resource_Owner")
+@Table(name="Creditors")
 public class ResourceOwner {
 
     @Id
-    @Column(name="ID", unique=true, nullable=false)
+    @Column(name="CreditorID", unique=true, nullable=false)
     private Integer id;
 
-    @Column(name="Company")
-    private String company;
+    @Column(name="CreditorIndex")
+    private String creditorIndex;
+
+    @OneToOne
+    @JoinColumn(name="ContactID")
+    private CreditorContact contact;
+
+    @Column(name = "notes")
+    private String notes;
 
     public Integer getId() {
         return id;
@@ -24,11 +28,37 @@ public class ResourceOwner {
         this.id = id;
     }
 
-    public String getCompany() {
-        return company;
+    public String getCreditorIndex() {
+        return creditorIndex;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    public void setCreditorIndex(String creditorIndex) {
+        this.creditorIndex = creditorIndex;
+    }
+
+    public CreditorContact getContact() {
+        return contact;
+    }
+
+    public void setContact(CreditorContact contact) {
+        this.contact = contact;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    @Override
+    public String toString() {
+        return "ResourceOwner{" +
+                "id=" + id +
+                ", creditorIndex='" + creditorIndex + '\'' +
+                ", contact=" + contact +
+                ", notes='" + notes + '\'' +
+                '}';
     }
 }
